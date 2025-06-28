@@ -1,0 +1,99 @@
+/* Questionário Page Styles */
+
+.questionario-container {
+    padding: 40px 0;
+}
+
+.questionario-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.questionario-header {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 20px 20px 0 0;
+    padding: 25px;
+}
+
+.progress-section {
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.progress {
+    height: 12px;
+    border-radius: 10px;
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.question-container {
+    margin-bottom: 30px;
+}
+
+.question-example {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border: 2px dashed #f39c12;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.form-check {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-check:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: translateX(5px);
+}
+
+.form-check-input:checked + .form-check-label {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.question-navigation {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.info-cards {
+    margin-top: 40px;
+}
+
+.info-cards .card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.info-cards .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.btn-submit-disabled {
+    background: #6c757d !important;
+    cursor: not-allowed;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    border: none;
+    border-radius: 15px;
+    border-left: 5px solid #17a2b8;
+}

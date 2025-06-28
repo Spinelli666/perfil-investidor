@@ -1,0 +1,203 @@
+{% extends 'questionario/base.html' %}
+{% load static %}
+
+{% block title %}Resultado - Perfil do Investidor{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/resultado.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container resultado-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card resultado-card">
+                <div class="card-header resultado-header text-white text-center">
+                    <h2 class="mb-0">
+                        <i class="bi bi-trophy me-2"></i>
+                        Seu Perfil de Investidor
+                    </h2>
+                </div>
+                
+                <div class="card-body p-5 text-center">
+                    <div class="mb-4">
+                        {% if perfil == "Conservador" %}
+                            <i class="bi bi-shield-check text-success profile-icon"></i>
+                        {% elif perfil == "Moderado" %}
+                            <i class="bi bi-bar-chart text-warning profile-icon"></i>
+                        {% else %}
+                            <i class="bi bi-graph-up text-danger profile-icon"></i>
+                        {% endif %}
+                    </div>
+                    
+                    <h1 class="profile-title">
+                        Perfil: {{ perfil }}
+                    </h1>
+                    
+                    {% if perfil == "Conservador" %}
+                        <div class="profile-characteristics conservador">
+                            <h5 class="fw-bold">Características do Perfil Conservador:</h5>
+                            <ul class="characteristic-list">
+                                <li><i class="bi bi-check-circle me-2"></i>Prioriza segurança e preservação do capital</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Baixa tolerância ao risco</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Preferência por investimentos de renda fixa</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Foco em estabilidade e previsibilidade</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="row recommendations-grid">
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title recommended">Investimentos Recomendados</h6>
+                                    <ul class="investment-list">
+                                        <li>• Poupança</li>
+                                        <li>• CDB</li>
+                                        <li>• Tesouro Direto</li>
+                                        <li>• LCI/LCA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title caution">Evitar</h6>
+                                    <ul class="investment-list">
+                                        <li>• Ações voláteis</li>
+                                        <li>• Derivativos</li>
+                                        <li>• Criptomoedas</li>
+                                        <li>• Fundos de alto risco</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    {% elif perfil == "Moderado" %}
+                        <div class="profile-characteristics moderado">
+                            <h5 class="fw-bold">Características do Perfil Moderado:</h5>
+                            <ul class="characteristic-list">
+                                <li><i class="bi bi-check-circle me-2"></i>Equilibra segurança e rentabilidade</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Tolerância moderada ao risco</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Diversificação entre renda fixa e variável</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Foco no médio prazo</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="row recommendations-grid">
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title recommended">Investimentos Recomendados</h6>
+                                    <ul class="investment-list">
+                                        <li>• CDB e LCI/LCA</li>
+                                        <li>• Fundos Multimercado</li>
+                                        <li>• Ações Blue Chips</li>
+                                        <li>• Fundos Imobiliários</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title caution">Usar com Cautela</h6>
+                                    <ul class="investment-list">
+                                        <li>• Day trade</li>
+                                        <li>• Opções</li>
+                                        <li>• Small caps</li>
+                                        <li>• Investimentos internacionais</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    {% else %}
+                        <div class="profile-characteristics arrojado">
+                            <h5 class="fw-bold">Características do Perfil Arrojado:</h5>
+                            <ul class="characteristic-list">
+                                <li><i class="bi bi-check-circle me-2"></i>Busca alta rentabilidade</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Alta tolerância ao risco</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Foco em renda variável</li>
+                                <li><i class="bi bi-check-circle me-2"></i>Visão de longo prazo</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="row recommendations-grid">
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title recommended">Investimentos Recomendados</h6>
+                                    <ul class="investment-list">
+                                        <li>• Ações</li>
+                                        <li>• Fundos de Ações</li>
+                                        <li>• ETFs</li>
+                                        <li>• BDRs</li>
+                                        <li>• Startups e Venture Capital</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="recommendation-card">
+                                    <h6 class="recommendation-title advanced">Oportunidades Avançadas</h6>
+                                    <ul class="investment-list">
+                                        <li>• Opções</li>
+                                        <li>• Contratos futuros</li>
+                                        <li>• Criptomoedas</li>
+                                        <li>• Fundos hedge</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    
+                    <div class="alert-info resultado">
+                        <i class="bi bi-lightbulb me-2"></i>
+                        <strong>Lembre-se:</strong> Este resultado é uma orientação inicial. 
+                        É sempre recomendável consultar um assessor de investimentos para uma análise mais detalhada.
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="{% url 'questionario:questionario' %}" class="btn btn-outline-primary me-3">
+                            <i class="bi bi-arrow-clockwise me-2"></i>
+                            Refazer Questionário
+                        </a>
+                        <a href="{% url 'questionario:home' %}" class="btn btn-primary">
+                            <i class="bi bi-house me-2"></i>
+                            Voltar ao Início
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Próximos Passos -->
+            <div class="card next-steps-card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-signpost me-2"></i>
+                        Próximos Passos
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="step-item text-center">
+                                <i class="bi bi-book text-primary step-icon"></i>
+                                <h6>Eduque-se</h6>
+                                <small class="text-muted">Continue aprendendo sobre investimentos adequados ao seu perfil</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="step-item text-center">
+                                <i class="bi bi-calculator text-primary step-icon"></i>
+                                <h6>Planeje</h6>
+                                <small class="text-muted">Defina seus objetivos financeiros e prazos</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="step-item text-center">
+                                <i class="bi bi-graph-up-arrow text-primary step-icon"></i>
+                                <h6>Invista</h6>
+                                <small class="text-muted">Comece a investir seguindo sua estratégia</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
